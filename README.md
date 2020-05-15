@@ -1,4 +1,4 @@
-#Find Twitter Bot
+# Find Twitter Bot
 
 First project with Python, trying to find out if a user is a bot or not in twiter. 
 
