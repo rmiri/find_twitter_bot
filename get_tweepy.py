@@ -17,14 +17,14 @@ api = tweepy.API(auth)
 # for tweet in public_tweets:
 #     print(tweet.text)
 
-user = 'jultaijt'
+user = 'rimiriuk'
 
-for tweet in tweepy.Cursor(api.user_timeline,id=user).items(50):
-    # print(tweet.text)
-    if tweet.source != 'Twitter for iPhone':
-        if tweet.source != 'Twitter for Android':
-            # print(tweet)
-            print(tweet.source)
+for tweet in tweepy.Cursor(api.user_timeline,id=user).items(2):
+    print(tweet)
+    # if tweet.source != 'Twitter for iPhone':
+    #     if tweet.source != 'Twitter for Android':
+    #         # print(tweet)
+    #         print(tweet.source)
 
 # print(public_tweets[0])
 
