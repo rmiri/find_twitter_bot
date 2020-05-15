@@ -1,8 +1,6 @@
 import tweepy
 import keys 
 
-
-
 access_token = keys.ACCESS_TOKEN
 access_token_secret = keys.ACCESS_SECRET 
 consumer_key = keys.CONSUMER_KEY
@@ -13,18 +11,19 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-# public_tweets = api.home_timeline()
-# for tweet in public_tweets:
-#     print(tweet.text)
-
-user = 'rimiriuk'
+user = 'rmiriuk'
+sourceTwitter = ['Twitter for iPhone','Twitter for Android','Twitter for iPad','Twitter Web App']
 
 for tweet in tweepy.Cursor(api.user_timeline,id=user).items(2):
-    print(tweet)
-    # if tweet.source != 'Twitter for iPhone':
-    #     if tweet.source != 'Twitter for Android':
-    #         # print(tweet)
-    #         print(tweet.source)
+    # print(tweet)
+    for src in sourceTwitter:
+        if tweet.source != src:
+            print(tweet.source)
 
 # print(public_tweets[0])
 
+
+
+# public_tweets = api.home_timeline()
+# for tweet in public_tweets:
+#     print(tweet.text)
